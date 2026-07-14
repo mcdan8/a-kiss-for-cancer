@@ -76,7 +76,7 @@
   .story{text-align:left;max-width:560px;margin:0 auto}
 
   .cards{display:grid;grid-template-columns:1fr;gap:16px;max-width:560px;margin:8px auto 0}
-  .card{background:rgba(28,73,166,.06);border:1px solid rgba(28,73,166,.3);border-radius:14px;padding:26px 20px;text-align:left}
+  .card{background:#FFFFFF;border:1px solid #E2E8F4;border-radius:18px;padding:26px 22px;text-align:left;box-shadow:0 8px 26px rgba(11,31,63,.08)}
   .dark-card{background:rgba(46,95,199,.12);border-color:rgba(46,95,199,.4)}
   .card .script{font-size:1.5rem;color:var(--royal);display:block;margin-bottom:6px}
   .dark-card .script{color:var(--white)}
@@ -86,7 +86,7 @@
   .card-photo{width:100%;max-height:220px;object-fit:cover;border-radius:10px;margin-bottom:14px}
   .story-photo{width:110px;height:110px;border-radius:50%;object-fit:cover;float:right;margin:0 0 12px 14px;box-shadow:0 0 0 4px rgba(28,73,166,.15)}
   .price{font-weight:600;color:var(--royal);margin-top:10px;font-size:1.05rem}
-  .dark-card .price{color:var(--royal-soft)}
+  
 
   .mini-row{margin-top:14px;display:flex;gap:10px}
   .mini-btn{background:none;border:1px solid rgba(28,73,166,.4);color:var(--royal);font-family:'Halant',Georgia,serif;font-size:.78rem;padding:4px 14px;border-radius:999px;cursor:pointer}
@@ -230,14 +230,14 @@
 
 <!-- ============ SHOP ============ -->
 <div class="panel" id="panel-shop">
-  <section style="padding-top:72px">
+  <section class="light" style="padding-top:72px">
     <div class="inner">
       <span class="kicker">Shop &amp; Support</span>
       <h2>Every dollar carries the mission.</h2>
       <p>Support goes toward care packages for chemotherapy patients, community awareness events, and keeping Britt'nee's vision moving.</p>
       <div class="cards" id="shopList"></div>
       <div class="add-row" id="shopAdmin"></div>
-      <p style="margin-top:28px;font-size:.9rem;color:var(--royal-soft)">Follow <a href="https://instagram.com/akissforcancer">@akissforcancer</a> to know the moment new items drop.</p>
+      <p style="margin-top:28px;font-size:.9rem;color:var(--royal)">Follow <a href="https://instagram.com/akissforcancer">@akissforcancer</a> to know the moment new items drop.</p>
     </div>
   </section>
 </div>
@@ -438,7 +438,7 @@ function renderShop() {
   const list = document.getElementById('shopList');
   const admin = document.getElementById('shopAdmin');
   list.innerHTML = cache.shop.map(it => `
-    <div class="card dark-card">
+    <div class="card">
       ${it.photo_url ? '<img class="card-photo" src="' + esc(it.photo_url) + '" alt="">' : ''}
       <span class="script">${esc(it.name)}</span>
       ${it.description ? '<p>' + esc(it.description) + '</p>' : ''}
